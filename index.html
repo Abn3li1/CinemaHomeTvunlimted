@@ -3,66 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CinemaHomeTV</title>
-<meta name="description" content="تحميل تطبيق CinemaHomeTV للشاشات والبوكسات">
+<title>CinemaHome TV</title>
+<meta name="description" content="تحميل تطبيق CinemaHome TV للشاشات والبوكسات">
+<meta name="theme-color" content="#0c0c14">
 <link rel="icon" href="icon.png">
 <style>
-:root{color-scheme:dark;--bg:#0d1117;--card:#161b22;--line:#30363d;--text:#f0f3f6;--soft:#a9b4c0;--accent:#2f81f7}
+:root{color-scheme:dark;--bg:#0c0c14;--panel:#15151f;--panel2:#1d1c2b;--line:#2c2a40;--text:#f4f3fa;--soft:#aaa7bd;--brand:#6d50fa;--brand2:#a99bff}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:18px/1.6 Tahoma,Arial,sans-serif}
-main{max-width:760px;margin:auto;padding:24px 16px 40px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-header img{width:64px;height:64px;border-radius:12px}
-h1{font-size:28px;line-height:1.2;margin:0}
-h2{font-size:19px;margin:0 0 6px}
-p{margin:0}
-.soft{color:var(--soft);font-size:16px}
-.dl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;padding:16px 18px;background:var(--card);border:3px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none}
-.dl:focus,.dl:hover{border-color:#fff;background:#21262d;outline:0}
-.dl.main{border-color:var(--accent)}
-.dl.main:focus,.dl.main:hover{border-color:#fff}
-.dl b{display:block;font-size:20px;font-weight:600}
-.go{flex:none;padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:17px}
-.box{margin-top:16px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px}
-#notes{white-space:pre-line;color:var(--soft);font-size:16px}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;background:var(--bg) radial-gradient(900px 420px at 50% -120px,#2a2159 0,rgba(12,12,20,0) 72%) no-repeat;color:var(--text);font:17px/1.65 Tahoma,"Segoe UI",Arial,sans-serif}
+main{max-width:1120px;margin:auto;padding:36px 18px 44px}
+.brand{display:flex;align-items:center;justify-content:center;gap:16px;direction:ltr}
+.brand img{width:76px;height:76px;border-radius:18px}
+.name{text-align:left;line-height:1.05}
+.name b{display:block;font-size:34px;font-weight:700;letter-spacing:-.5px}
+.name i{display:block;margin-top:5px;color:var(--brand2);font-size:15px;font-style:normal;font-weight:700;letter-spacing:9px}
+.lead{margin:20px 0 26px;text-align:center;color:var(--soft)}
+#ver{color:var(--text)}
+.grid{display:grid;gap:18px}
+.dl{display:flex;align-items:center;gap:14px;padding:15px 16px;border:2px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);text-decoration:none}
+.dl+.dl{margin-top:12px}
+.dl svg{flex:none;width:30px;height:30px;fill:none;stroke:var(--brand2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.txt{flex:1;min-width:0}
+.dl b{display:block;font-size:18px;font-weight:700;line-height:1.35}
+.dl small{display:block;color:var(--soft);font-size:14px}
+.go{flex:none;color:var(--brand2);font-size:15px;font-weight:700}
+.dl.main{padding:22px 20px;border-color:var(--brand);background:var(--brand)}
+.dl.main svg{width:38px;height:38px;stroke:#fff}
+.dl.main b{font-size:22px}
+.dl.main small,.dl.main .go{color:#eee9ff}
+.dl.main .go{padding:8px 16px;border-radius:9px;background:rgba(0,0,0,.2);color:#fff}
+.dl:hover{border-color:var(--brand2)}
+.dl:focus{outline:4px solid #fff;outline-offset:2px;border-color:#fff;background:var(--panel2)}
+.dl.main:focus{background:#7b61ff}
+section{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+section+section{margin-top:14px}
+h2{margin:0 0 10px;font-size:18px;font-weight:700}
+ol{margin:0;padding:0;list-style:none;counter-reset:s}
+ol li{position:relative;padding:0 38px 10px 0;color:var(--soft);counter-increment:s}
+ol li:last-child{padding-bottom:0}
+ol li:before{content:counter(s);position:absolute;top:0;right:0;width:27px;height:27px;border-radius:50%;background:var(--panel2);color:var(--brand2);font:700 14px/27px Tahoma,Arial,sans-serif;text-align:center}
+#notes{margin:0;color:var(--soft);white-space:pre-line}
+@media (min-width:900px){
+main{padding-top:44px}
+.grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:start}
+}
 </style>
 </head>
 <body>
 <main>
-<header>
-<img src="icon.png" width="64" height="64" alt="">
-<div>
-<h1>CinemaHomeTV</h1>
-<p class="soft"><span id="ver">آخر إصدار</span>، تطبيق أندرويد للشاشات والبوكسات</p>
+<div class="brand">
+<img src="icon.png" width="76" height="76" alt="">
+<div class="name"><b>CinemaHome</b><i>TV</i></div>
 </div>
-</header>
+<p class="lead">حمّل التطبيق لشاشتك أو البوكس · <span id="ver">آخر إصدار</span></p>
 
+<div class="grid">
+<div>
 <a class="dl main" autofocus href="https://github.com/Abn3li1/CinemaHomeTvunlimted/releases/latest/download/app-lite-universal-release.apk">
-<span><b>يعمل على كل أنواع الأجهزة</b><span class="soft">النسخة العامة <span data-apk="app-lite-universal-release.apk"></span></span></span>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10.5l5 5 5-5M4 20h16"/></svg>
+<span class="txt"><b>يعمل على كل أنواع الأجهزة</b><small>النسخة العامة<span data-apk="app-lite-universal-release.apk"></span></small></span>
 <span class="go">تحميل</span>
 </a>
-<a class="dl" href="https://github.com/Abn3li1/CinemaHomeTvunlimted/releases/latest/download/app-lite-armeabi-v7a-release.apk">
-<span><b>لمعظم الأجهزة</b><span class="soft">armeabi-v7a <span data-apk="app-lite-armeabi-v7a-release.apk"></span></span></span>
+<a class="dl" style="margin-top:12px" href="https://github.com/Abn3li1/CinemaHomeTvunlimted/releases/latest/download/app-lite-armeabi-v7a-release.apk">
+<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="9" width="14" height="9" rx="2"/><path d="M9 21h6M12 18v3M8 9l-2-4M16 9l2-4"/></svg>
+<span class="txt"><b>لمعظم الأجهزة</b><small>armeabi-v7a<span data-apk="app-lite-armeabi-v7a-release.apk"></span></small></span>
 <span class="go">تحميل</span>
 </a>
 <a class="dl" href="https://github.com/Abn3li1/CinemaHomeTvunlimted/releases/latest/download/app-lite-arm64-v8a-release.apk">
-<span><b>الشاشات والأجهزة الحديثة</b><span class="soft">arm64-v8a <span data-apk="app-lite-arm64-v8a-release.apk"></span></span></span>
+<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+<span class="txt"><b>الشاشات والأجهزة الحديثة</b><small>arm64-v8a<span data-apk="app-lite-arm64-v8a-release.apk"></span></small></span>
 <span class="go">تحميل</span>
 </a>
+</div>
 
-<section class="box" id="news" hidden>
+<div>
+<section id="news" hidden>
 <h2>الجديد بهذا الإصدار</h2>
 <p id="notes"></p>
 </section>
-
-<section class="box">
+<section>
 <h2>طريقة التنصيب</h2>
-<p class="soft">1. حمّل النسخة المناسبة.<br>2. افتح الملف واسمح بالتثبيت إذا طلب الجهاز.<br>3. بعدها التحديثات توصلك من داخل التطبيق.</p>
+<ol>
+<li>حمّل النسخة المناسبة لجهازك.</li>
+<li>افتح الملف، واسمح بالتثبيت إذا طلب الجهاز.</li>
+<li>بعدها التحديثات توصلك من داخل التطبيق.</li>
+</ol>
 </section>
+</div>
+</div>
 </main>
 <script>
-var links=document.querySelectorAll('.dl');
-if(links[0])links[0].focus();
+var first=document.querySelector('.dl');
+if(first)first.focus();
 var x=new XMLHttpRequest();
 x.open('GET','https://api.github.com/repos/Abn3li1/CinemaHomeTvunlimted/releases/latest');
 x.onload=function(){
@@ -72,10 +105,12 @@ x.onload=function(){
   if(v)document.getElementById('ver').textContent='الإصدار '+v;
   (r.assets||[]).forEach(function(a){
     var e=document.querySelector('[data-apk="'+a.name+'"]');
-    if(e)e.textContent='، حدود '+Math.round(a.size/1048576)+' MB';
+    if(e)e.textContent=' · '+Math.round(a.size/1048576)+' MB';
   });
-  var t=(r.body||'').replace(/\r/g,'').split('### 📥')[0]
-    .replace(/^##\s+CinemaHomeTV.*$/m,'').replace(/^#+\s*/gm,'').replace(/\*\*/g,'')
+  var t=(r.body||'').replace(/\r/g,'').split(/^###.*(?:📥|⚠).*$/m)[0]
+    .replace(/^##\s+CinemaHome.*$/m,'')
+    .replace(/^###\s*[^\s؀-ۿ]*\s*/gm,'')
+    .replace(/^-\s*/gm,'• ').replace(/\*\*/g,'').replace(/ {2,}/g,' ')
     .replace(/\n{3,}/g,'\n\n').trim();
   if(t){document.getElementById('notes').textContent=t;document.getElementById('news').hidden=false}
 };
